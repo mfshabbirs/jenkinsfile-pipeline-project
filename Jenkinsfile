@@ -3,9 +3,14 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo 'This is pipeline script triggered via GitHub webhook'
-                sh 'python3 --version'
-                sh 'python3 pipeline.py'
+                echo 'Compiling the Java source code'
+                sh 'javac Hello.java'
+            }
+        }
+        stage('run') {
+            steps {
+                echo 'Running the compiled Java code.'
+                sh 'java Hello'
             }
         }
     }
