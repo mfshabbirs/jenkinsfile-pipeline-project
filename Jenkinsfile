@@ -4,7 +4,8 @@ pipeline {
         stage('build') {
             steps {
                 echo 'This is pipeline script triggered via GitHub webhook'
-                sh 'echo Integrating Jenkins Pipeline with GitHub Webhook using Jenkinsfile'
+                sh 'python3 --version'
+                sh 'python3 pipeline.py'
             }
         }
     }
